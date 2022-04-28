@@ -1,0 +1,4 @@
+patient_ID,Annotator 1,Annotator 2,final groundtruth
+vs_gk_1,3,2,4
+vs_gk_3,3,4,4
+vs_gk_4,3,3,3
