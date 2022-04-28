@@ -52,7 +52,7 @@ For each of the labels, 3 features are extracted: volume, distance to the tumour
 
 At the beginning of the notebook, the input path to the parcellations and the output path of the CSV files has to be defined. For training, the input path should be [parcellation_data/GIF_with_tumour_9classes](parcellation_data/GIF_with_tumour_9classes) and the output path should be [random_forest_classification/features/extracted_from_GIF_output](random_forest_classification/features/extracted_from_GIF_output). For inference, the input path should be [parcellation_data/GIF_UNet_prediction_9_classes_T1](parcellation_data/GIF_UNet_prediction_9_classes_T1) and the output path [random_forest_classification/features/extracted_from_nnUNet_prediction/T1](random_forest_classification/features/extracted_from_nnUNet_prediction/T1) for the parcellations predicted based on T1 images, and modified accordingly for T2 and T1+T2 input modalities.
 
-#### Random forest training/inference
+### Random forest training/inference
 Once features are extracted, the following jupyter-notebook can be used to train and infer with the random forest:
 [random_forest_classification/koos_classification_by_random_forest.ipynb](random_forest_classification/koos_classification_by_random_forest.ipynb)
 
@@ -61,8 +61,6 @@ The notebook relies on the ground truth Koos grades provided in the CSV file [Ko
 At the beginning of the notebook, the path to the training set (features extracted from GIF output) and the test sets (features extracted from the three nnU-Net predictions) are defined. The test sets are define by which CSV files are available in the defined test set path. Note that cases that are available in both the training set path and the test set path will be removed from the training set.
 
 A new random forest is trained and inference run for each of the test sets. Moreover, for each test set a confusion matrix and classification report will be printed to the console.
-
-####  
 
 ## References
 1. Cardoso MJ, Modat M, Wolz R, Melbourne A, Cash D, Rueckert D, Ourselin S. Geodesic Information Flows: Spatially-Variant Graphs and Their Application to Segmentation and Fusion. IEEE Trans Med Imaging. 2015 Sep;34(9):1976-88. doi: 10.1109/TMI.2015.2418298. Epub 2015 Apr 14. PMID: 25879909.
